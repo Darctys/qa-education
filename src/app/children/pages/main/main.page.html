@@ -1,0 +1,57 @@
+<div class="main">
+
+  <form class="main__form" nz-form [formGroup]="form">
+    <div *ngIf="!isShowBilet; else biletTemplate">
+
+      <div>Имя</div>
+      <nz-form-item>
+        <nz-form-control>
+          <input nzSize="small" formControlName="fio" nz-input/>
+        </nz-form-control>
+      </nz-form-item>
+
+      <div>Age</div>
+      <nz-form-item>
+        <nz-form-control>
+          <nz-slider [nzMax]="1000" formControlName="age"></nz-slider>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control formControlName="date">
+          <nz-date-picker  [nzShowTime]="true"></nz-date-picker>
+        </nz-form-control>
+      </nz-form-item>
+      <div class="main__form-item">
+        <div>
+          филм
+        </div>
+        <nz-form-item>
+          <nz-form-control>
+            <nz-select>
+              <nz-option nzValue="История игрушек" nzLabel="История игрушек"></nz-option>
+              <nz-option nzValue="Человек паук" nzLabel="Титаник"></nz-option>
+              <nz-option nzValue="Мстители" nzLabel="Мстители" ></nz-option>
+              <nz-option nzValue="форсаж 100" nzLabel="Форсаж 100" ></nz-option>
+              <nz-option nzValue="тачки" nzLabel="тачки" nzDisabled></nz-option>
+              <nz-option nzValue="Корпорация Монстров" nzLabel="Корпорация Монстров" ></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </div>
+
+
+
+    <nz-form-item>
+      <nz-form-control>
+        <button (click)="submitForm()" nz-button nzType="primary" nzBlock>Ок.</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</div>
+
+<ng-template #biletTemplate>
+  <div> ваш билет</div>
+</ng-template>
+
