@@ -1,0 +1,7 @@
+{
+  "name": "qa-education-mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
