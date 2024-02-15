@@ -52,6 +52,6 @@
 </div>
 
 <ng-template #biletTemplate>
-  <div> ваш билет</div>
+  <qrcode  [qrdata]="qrLink" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
 </ng-template>
 

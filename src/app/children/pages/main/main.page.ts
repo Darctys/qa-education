@@ -22,6 +22,8 @@ export class MainPage {
 
   public accept: number = 1
 
+  public qrLink: string = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+
   public isShowBilet: boolean = false
 
   constructor(

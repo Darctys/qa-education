@@ -17,6 +17,7 @@ import {registerLocaleData} from "@angular/common";
 import en from '@angular/common/locales/en';
 import ko from '@angular/common/locales/ko';
 import {DummyService} from "./children/services/dump.service";
+import {QRCodeModule} from "angularx-qrcode";
 registerLocaleData(ko);
 
 const routes: Routes = [
@@ -57,6 +58,7 @@ const routes: Routes = [
     NzSelectModule,
     NzDatePickerModule,
     FormsModule,
+    QRCodeModule,
   ],
   providers: [
     NzI18nService,
