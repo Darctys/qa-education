@@ -18,6 +18,9 @@ import en from '@angular/common/locales/en';
 import ko from '@angular/common/locales/ko';
 import {DummyService} from "./children/services/dump.service";
 import {QRCodeModule} from "angularx-qrcode";
+import {HOST_TOKEN} from "./tokens/host.token";
+import {DataService} from "./data/data.service";
+import {HttpClientModule} from "@angular/common/http";
 registerLocaleData(ko);
 
 const routes: Routes = [
@@ -59,11 +62,14 @@ const routes: Routes = [
     NzDatePickerModule,
     FormsModule,
     QRCodeModule,
+    HttpClientModule
   ],
   providers: [
     NzI18nService,
     provideNzI18n(ko_KR),
-    DummyService
+    DummyService,
+    DataService,
+    { provide: HOST_TOKEN, useValue: 'http://158.160.144.155:8000' }
   ],
   bootstrap: [
     AppComponent
