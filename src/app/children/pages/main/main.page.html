@@ -19,7 +19,7 @@
 
       <nz-form-item>
         <nz-form-control formControlName="date">
-          <nz-date-picker [nzShowTime]="true"></nz-date-picker>
+          <nz-date-picker [nzDisabledDate]="disabledDate" [nzShowTime]="true"></nz-date-picker>
         </nz-form-control>
       </nz-form-item>
       <div class="main__form-item">
@@ -28,13 +28,8 @@
         </div>
         <nz-form-item>
           <nz-form-control>
-            <nz-select>
-              <nz-option nzValue="История игрушек" nzLabel="История игрушек"></nz-option>
-              <nz-option nzValue="Человек паук" nzLabel="Титаник"></nz-option>
-              <nz-option nzValue="Мстители" nzLabel="Мстители" ></nz-option>
-              <nz-option nzValue="форсаж 100" nzLabel="Форсаж 100" ></nz-option>
-              <nz-option nzValue="тачки" nzLabel="тачки" nzDisabled></nz-option>
-              <nz-option nzValue="Корпорация Монстров" nzLabel="Корпорация Монстров" ></nz-option>
+            <nz-select *ngFor="let film of filmList">
+              <nz-option [nzValue]="film.id" [nzLabel]="film.name"></nz-option>
             </nz-select>
           </nz-form-control>
         </nz-form-item>
