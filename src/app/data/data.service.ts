@@ -1,5 +1,5 @@
 import {inject, Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {HOST_TOKEN} from "../tokens/host.token";
 import {IFilm} from "./interfaces/film.interface";
@@ -32,8 +32,12 @@ export class DataService {
 
   public bookingFilmSession(bookingSession: IBookingFilm): Observable<IBookingFilm[]> {
     const url: string = this._host + '/api/booking'
+    let headers: HttpHeaders = new HttpHeaders();
+    headers.append("Access-Control-Allow-Headers","*");
 
-    return this._http.post<IBookingFilm[]>(url, bookingSession)
+    return this._http.post<IBookingFilm[]>(url, bookingSession, {
+      headers: headers
+    })
   }
 
 
