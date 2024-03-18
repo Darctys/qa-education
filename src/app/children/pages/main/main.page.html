@@ -28,8 +28,8 @@
         </div>
         <nz-form-item>
           <nz-form-control>
-            <nz-select *ngFor="let film of filmList">
-              <nz-option [nzValue]="film.id" [nzLabel]="film.name"></nz-option>
+            <nz-select>
+              <nz-option *ngFor="let film of filmList" [nzValue]="film.id" [nzLabel]="film.name"></nz-option>
             </nz-select>
           </nz-form-control>
         </nz-form-item>
