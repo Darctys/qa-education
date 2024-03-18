@@ -85,7 +85,7 @@ export class MainPage implements OnInit {
       const sessionDate: Date = this.form.controls.date.value!
       const filmId: number = Number(this.form.controls.film.value);
       const film: IFilm = this.filmList.find((film: IFilm) => film.id === filmId)!;
-      film.id=0;
+      film.id = 0;
 
       const bookingModel: IBookingFilm = {
         id: this.genrateRandomNumber(1, 1200),
