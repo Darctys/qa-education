@@ -1,5 +1,5 @@
 <div class="main">
-
+  <button (click)="goToSeesion()" nz-button nzType="primary" nzBlock>Сессиии</button>
   <form class="main__form" nz-form [formGroup]="form">
     <div *ngIf="!isShowBilet; else biletTemplate">
 

@@ -1,0 +1,12 @@
+<div *ngFor="let session of allSession">
+  <nz-list nzGrid>
+    <div nz-row [nzGutter]="16">
+      <div nz-col [nzSpan]="6">
+        <nz-list-item>
+          <nz-card [nzTitle]="session.sessionDate.toLocaleString()">{{session.film.name}}</nz-card>
+        </nz-list-item>
+      </div>
+    </div>
+  </nz-list>
+
+</div>

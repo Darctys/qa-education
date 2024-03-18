@@ -6,6 +6,7 @@ import {DummyService} from "../../services/dump.service";
 import {DataService} from "../../../data/data.service";
 import {IFilm} from "../../../data/interfaces/film.interface";
 import {IBookingFilm} from "../../../data/interfaces/booking-film.interface";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -57,7 +58,8 @@ export class MainPage implements OnInit {
     private _cdr: ChangeDetectorRef,
     private _i18n: NzI18nService,
     private _dumpService: DummyService,
-    private _dataService: DataService
+    private _dataService: DataService,
+    private _router: Router,
   ) {
     setInterval(() => this._dumpService.some$.next(100000000), 50);
       this._dumpService.some$.subscribe(value => {
@@ -114,6 +116,10 @@ export class MainPage implements OnInit {
           '░░▀▀░░░░░░░░░▀▀██████▀▀░░░▀▀██░░')
       });
 
+  }
+
+  public goToSeesion(): void {
+    this._router.navigateByUrl('main/session')
   }
 
 }

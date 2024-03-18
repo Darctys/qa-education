@@ -21,6 +21,9 @@ import {QRCodeModule} from "angularx-qrcode";
 import {HOST_TOKEN} from "./tokens/host.token";
 import {DataService} from "./data/data.service";
 import {HttpClientModule} from "@angular/common/http";
+import {SessionsPage} from "./children/pages/sessions/sessions.page";
+import {NzListModule} from "ng-zorro-antd/list";
+import {NzCardModule} from "ng-zorro-antd/card";
 registerLocaleData(ko);
 
 const routes: Routes = [
@@ -36,6 +39,10 @@ const routes: Routes = [
       {
         path: '',
         component: MainPage
+      },
+      {
+        path: 'session',
+        component: SessionsPage
       }
     ]
   }
@@ -47,7 +54,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    MainPage
+    MainPage,
+    SessionsPage
   ],
   imports: [
     BrowserModule,
@@ -62,7 +70,9 @@ const routes: Routes = [
     NzDatePickerModule,
     FormsModule,
     QRCodeModule,
-    HttpClientModule
+    HttpClientModule,
+    NzListModule,
+    NzCardModule
   ],
   providers: [
     NzI18nService,
