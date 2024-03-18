@@ -28,7 +28,7 @@
         </div>
         <nz-form-item>
           <nz-form-control>
-            <nz-select>
+            <nz-select formControlName="film">
               <nz-option *ngFor="let film of filmList" [nzValue]="film.id" [nzLabel]="film.name"></nz-option>
             </nz-select>
           </nz-form-control>
