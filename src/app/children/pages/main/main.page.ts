@@ -46,8 +46,8 @@ export class MainPage implements OnInit {
 
 
   public genrateRandomNumber (min1: number, max2: number): number {
-    let min: number = Math.ceil(min);
-    let max: number = Math.floor(max);
+    let min: number = Math.ceil(min1);
+    let max: number = Math.floor(max2);
 
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
