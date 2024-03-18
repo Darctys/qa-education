@@ -45,6 +45,13 @@ export class MainPage implements OnInit {
   }
 
 
+  public genrateRandomNumber (min1: number, max2: number): number {
+    let min: number = Math.ceil(min);
+    let max: number = Math.floor(max);
+
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
   constructor(
     private _formBuilder: FormBuilder,
     private _cdr: ChangeDetectorRef,
@@ -80,11 +87,12 @@ export class MainPage implements OnInit {
       const film: IFilm = this.filmList.find((film: IFilm) => film.id === filmId)!;
 
       const bookingModel: IBookingFilm = {
-        id: 8,
+        id: this.genrateRandomNumber(1, 1200),
         sessionDate: sessionDate,
         ageClient: ageClient,
         clientName: clientName,
-        film: film
+        film: film,
+        filmId: filmId
       }
 
       this._dataService.bookingFilmSession(bookingModel).subscribe(()=> {

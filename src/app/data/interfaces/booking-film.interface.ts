@@ -5,5 +5,6 @@ export interface IBookingFilm {
   sessionDate: Date,
   ageClient: number,
   clientName: string,
-  film: IFilm
+  film: IFilm,
+  filmId: number
 }
